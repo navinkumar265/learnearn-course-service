@@ -26,22 +26,22 @@ public interface ICourseRepository extends JpaRepository<Course, Integer> {
 	List<Course> findByPriority(PostPriority priority);
 
 	// custom
-	@Query("from Course c inner join c.company cp where cp.company_name=?1 and c.course_name=?2")
+	@Query("from Course c inner join c.company cp where cp.companyName=?1 and c.courseName=?2")
 	List<Course> findByCompanyNameCourseName(String companyName, String courseName);
 
-	@Query("from Course c inner join c.batch b where b.batch_name=?1 and c.course_name=?2")
+	@Query("from Course c inner join c.batch b where b.batchName=?1 and c.courseName=?2")
 	List<Course> findByBatchNameCourseName(String batchName, String courseName);
 
-	@Query("from Course c inner join c.company cp where cp.company_name=?1 and c.status=?2")
+	@Query("from Course c inner join c.company cp where cp.companyName=?1 and c.status=?2")
 	List<Course> findByCompanyNameCourseStatus(String companyName, PostStatus status);
 
-	@Query("from Course c inner join c.company cp where cp.company_name=?1 and c.priority=?2")
+	@Query("from Course c inner join c.company cp where cp.companyName=?1 and c.priority=?2")
 	List<Course> findByCompanyNameCoursePriority(String companyName, PostPriority priority);
 
-	@Query("from Course c inner join c.batch b where b.batch_name=?1 and c.status=?2")
+	@Query("from Course c inner join c.batch b where b.batchName=?1 and c.status=?2")
 	List<Course> findByBatchNameCourseStatus(String bacthName, PostStatus status);
 
-	@Query("from Course c inner join c.batch b where b.batch_name=?1 and c.priority=?2")
+	@Query("from Course c inner join c.batch b where b.batchName=?1 and c.priority=?2")
 	List<Course> findByBatchNameCoursePriority(String bacthName, PostPriority priority);
 
 }
