@@ -13,7 +13,7 @@ import com.learnearn.model.PostStatus;
 public interface ICourseRepository extends JpaRepository<Course, Integer> {
 
 	// derived
-	Course getByCourseId(int courseId);
+	Course findByCourseId(int courseId);
 
 	List<Course> findByCourseName(String courseName);
 

@@ -30,6 +30,7 @@ public class Trainer {
 	@SequenceGenerator(name = "course_gen",sequenceName = "course_seq",initialValue = 501,allocationSize = 1)
 	private Integer trainerId;
 	private String trainerName;
+	private String courseType;
 	
 	@Enumerated(EnumType.STRING)
     @Column(length = 8)
